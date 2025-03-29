@@ -9,7 +9,7 @@ endif
 CC     := $(TOOLCHAIN)gcc
 CFLAGS := -I. -O3 -std=gnu99 -ffunction-sections -Wall -Wextra -MMD
 
-SRC := $(shell find . -name "*.c")
+SRC := $(wildcard *.c) $(wildcard */*.c) $(wildcard */*/*.c)
 
 OBJ_DIR   := build$(BUILD_SUFFIX)
 OBJ_NAMES := $(SRC:.c=.o)
